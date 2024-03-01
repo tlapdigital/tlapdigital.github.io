@@ -1,0 +1,153 @@
+
+              <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Página com Vídeos</title>
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Adicionando Font Awesome para ícones -->
+                  <style>
+                      body {
+                          background: linear-gradient(135deg, #000000, #121212); /* Gradiente de preto (#000000) para cinza escuro (#121212) */
+                          color: #fff;
+                          font-family: Arial, sans-serif;
+                          margin: 0;
+                          padding: 0;
+                          box-sizing: border-box;
+                      }
+
+                      .container {
+                          max-width: 800px;
+                          margin: 0 auto;
+                          padding: 20px;
+                          text-align: center;
+                      }
+
+                      .videos {
+                          margin-bottom: 40px;
+                      }
+
+                      .video-container {
+                          display: none;
+                          margin-bottom: 20px;
+                          border-radius: 10px;
+                          overflow: hidden;
+                          box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+                      }
+
+                      .video-container.active {
+                          display: block;
+                      }
+
+                      iframe {
+                          width: 100%;
+                          height: 400px;
+                      }
+
+                      button {
+                          background-color: #333;
+                          color: #fff;
+                          border: none;
+                          border-radius: 5px;
+                          padding: 10px 20px;
+                          font-size: 16px;
+                          cursor: pointer;
+                          transition: background-color 0.3s ease;
+                      }
+
+                      button:hover {
+                          background-color: #555;
+                      }
+
+                      .scarcity-text {
+                          background-color: #333; /* Cor de fundo cinza */
+                          color: #fff; /* Cor do texto branco */
+                          padding: 20px;
+                          border-radius: 10px;
+                          margin-bottom: 20px;
+                      }
+
+                      .social-icons {
+                          text-align: center;
+                          margin-top: 20px;
+                      }
+
+                      .social-icons a {
+                          color: #fff;
+                          text-decoration: none;
+                          margin: 0 10px;
+                          font-size: 24px;
+                          transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+                      }
+
+                      .social-icons a:hover {
+                          color: #3d5afe; /* Cor azul quando o mouse passa por cima */
+                      }
+
+                      /* Cores personalizadas para os ícones específicos */
+                      .social-icons a:hover .fab.fa-instagram {
+                          color: #e4405f; /* Cor rosa para o Instagram */
+                      }
+
+                      .social-icons a:hover .fab.fa-tiktok {
+                          color: #000; /* Cor preta para o TikTok */
+                      }
+
+                      .social-icons a:hover .fab.fa-whatsapp {
+                          color: #25d366; /* Cor verde para o WhatsApp */
+                      }
+                  </style>
+              </head>
+              <body>
+                  <div class="container">
+                      <h1>Mini Curso Gratuito</h1>
+
+                      <div class="videos">
+                          <div id="video1" class="video-container active">
+                              <iframe src="https://drive.google.com/file/d/14SyOn-dD1RphQ9Fndm3LIb5ZP5Xp_LUL/preview" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                          <div id="video2" class="video-container">
+                              <iframe src="https://drive.google.com/file/d/1QM8aYifWPty9bTIQ8BIlTW1wf-NOgsfb/preview" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                          <div id="video3" class="video-container">
+                              <iframe src="https://drive.google.com/file/d/1ZHRKlVj5-uiu2WyIv3kfit2tb2g3uwKS/preview" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                          <div id="video4" class="video-container">
+                              <iframe src="https://drive.google.com/file/d/14SyOn-dD1RphQ9Fndm3LIb5ZP5Xp_LUL/preview" frameborder="0" allowfullscreen></iframe>
+                          </div>
+                          <button onclick="nextVideo()">Próximo Vídeo</button>
+                      </div>
+
+                      <div class="scarcity-text">
+                          <p style="font-size: 20px;">Descubra conteúdos exclusivos! Clique abaixo para acessar.</p>
+                          <button onclick="window.open('https://api.whatsapp.com/send?phone=5511941454492&text=J%C3%A1%20terminei%20o%20Mini%20Curso%20!', '_blank')">Clique aqui para mais conteúdo</button>
+                      </div>
+
+                      <div class="social-icons">
+                          <a href="https://www.instagram.com/mkd_digitaldozero/"><i class="fab fa-instagram"></i></a>
+                          <a href="https://www.tiktok.com/@jaeradared?_t=8kIbmrXIk3q&_r=1"><i class="fab fa-tiktok"></i></a>
+                          <a href="https://www.facebook.com/DigitalTechnologia.m/"><i class="fab fa-facebook"></i></a>
+                          <a href="https://api.whatsapp.com/send?phone=5511941454492&text=J%C3%A1%20terminei%20o%20Mini%20Curso%20!"><i class="fab fa-whatsapp"></i></a>
+                      </div>
+                  </div>
+
+                  <script>
+                      let currentVideo = 1;
+
+                      function nextVideo() {
+                          document.getElementById(`video${currentVideo}`).classList.remove('active');
+                          currentVideo++;
+                          if (currentVideo > 4) {
+                              currentVideo = 1;
+                          }
+                          document.getElementById(`video${currentVideo}`).classList.add('active');
+                      }
+
+                      function mostrarMaisConteudo() {
+                          // Aqui você pode adicionar a lógica para mostrar mais conteúdo quando o botão for clicado
+                          alert("Mais conteúdo disponível!");
+                      }
+                  </script>
+              </body>
+              </html>
+              
